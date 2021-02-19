@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4>Manage Hotels</h4>
-                    <a href="{{ route('admin.hotel.create') }}" role="button" class="btn btn-success float-right">Manage Hotels</a>
+                    <a href="{{ route('admin.hotel.create') }}" role="button" class="btn btn-success float-right">Create Hotel</a>
                 </div>
             </div>
         </div>
