@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -34,6 +36,24 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     /**
      * Ending Routes For Admin\HotelController
      */
+
+
+    /**
+     * Starting Routes For Admin\RoomController
+     */
+    Route::get('rooms', 'Admin\RoomController@index')->name('admin.room.index');
+    Route::get('room/create', 'Admin\RoomController@create')->name('admin.room.create');
+    Route::post('room', 'Admin\RoomController@store')->name('admin.room.store');
+    Route::get('room/{id}/edit', 'Admin\RoomController@edit')->name('admin.room.edit');
+    Route::patch('room/{id}', 'Admin\RoomController@update')->name('admin.room.update');
+    Route::get('room/destroy/{id}', 'Admin\RoomController@destroy')->name('admin.room.destroy');
+
+    
+    /**
+     * Ending Routes For Admin\RoomController
+     */
+
+
     Route::get('user/logout', function () {
         Auth::logout();
         return redirect()->route('login');

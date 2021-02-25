@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class HotelRequest extends FormRequest
+class RoomRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,21 +29,24 @@ class HotelRequest extends FormRequest
                 return [];
             case 'POST':
                 return [
-                    'hotel_name' => 'required|string|max:255|unique:hotels',
-                    'hotel_type' => 'required|string',
-                    'hotel_city' => 'required|string',
                     
-
+                    'room_no' => 'required|string|max:255',
+                    'room_floor' => 'required|string',
+                    'room_type' => 'required|string',
+                    'room_status' => 'required|string',
+                    'room_price' => 'required|string',
                 ];
             case 'PATCH':
                 return [
-                    'hotel_name' => 'required|string|max:255',
-                    'hotel_type' => 'required|string',
-                    'hotel_city' => 'required|string',
                     
+                    'room_no' => 'required|string|max:255',
+                    'room_floor' => 'required|string',
+                    'room_type' => 'required|string',
+                    'room_status' => 'required|string',
+                    'room_price' => 'required|string',
                 ];
             case 'DEFAULT':
                 return [];
-        }
     }
+}
 }

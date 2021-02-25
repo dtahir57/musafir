@@ -28,13 +28,19 @@
                             </div>
                             <div class="col-md-6 form-group">
                                 <select name="hotel_class" class="form-control">
-                                    <option selected disabled>Select Hotel Class</option>
-                                    <option value="standard" @if($hotel->hotel_class === 'standard') selected @endif>Standard</option>
-                                    <option value="deluxe" @if($hotel->hotel_class === 'deluxe') selected @endif>Deluxe</option>
+                                    <option selected disabled>Select Type</option>
+                                    <option value="hotel" @if($hotel->hotel_type === 'hotel') selected @endif>Hotel</option>
+                                    <option value="hotel+dine-Inn" @if($hotel->hotel_type === 'hotel+dine-Inn') selected @endif>Deluxe</option>
                                 </select>
                             </div>
                             <div class="col-md-6 form-group">
                                 <input type="text" name="hotel_address" class="form-control" placeholder="Hotel Address (Optional)" value="{{ $hotel->hotel_address }}" />
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="hotel_city" class="form-control" placeholder="City" required value="{{ $hotel->hotel_city }}" />
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="hotel_social" class="form-control" placeholder="Facebook/Instagram Link" required value="{{ $hotel->hotel_social }}" />
                             </div>
                             <div class="col-md-6 form-group">
                                 <input type="submit" class="btn btn-primary btn-block" value="Save" />

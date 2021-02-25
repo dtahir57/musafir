@@ -26,14 +26,26 @@
                                 <input type="text" name="hotel_name" class="form-control" placeholder="Hotel Name" required value="{{ old('hotel_name') }}" />
                             </div>
                             <div class="col-md-6 form-group">
-                                <select name="hotel_class" class="form-control">
-                                    <option selected disabled>Select Hotel Class</option>
-                                    <option value="standard">Standard</option>
-                                    <option value="deluxe">Deluxe</option>
+                                <select name="hotel_type" class="form-control">
+                                    <option selected disabled>Select Type</option>
+                                    <option value="Hotel">Hotel</option>
+                                    <option value="hotel+dine-Inn">Hotel + Dine-Inn</option>
                                 </select>
                             </div>
                             <div class="col-md-6 form-group">
                                 <input type="text" name="hotel_address" class="form-control" placeholder="Hotel Address (Optional)" />
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <select name="hotel_city" class="form-control">
+                                    <option selected disabled>City</option>
+                                    <option value="karachi">Karachi</option>
+                                    <option value="lahore">Lahore</option>
+                                    <option value="islamabad">Islamabad</option>
+                                    <option value="multan">Multan</option>
+                                </select>
+                            </div>
+                             <div class="col-md-6 form-group">
+                                <input type="text" name="hotel_social" class="form-control" placeholder="Facebook/Instagram Link (Optional)" />
                             </div>
                             <div class="col-md-6 form-group">
                                 <input type="submit" class="btn btn-primary btn-block" value="Save" />

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Hotel;
+use App\Models\Room; 
 use App\Http\Requests\HotelRequest;
 use Session;
 
@@ -41,8 +42,10 @@ class HotelController extends Controller
     {
         $hotel = new Hotel;
         $hotel->hotel_name = $request->hotel_name;
-        $hotel->hotel_class = $request->hotel_class;
+        $hotel->hotel_type = $request->hotel_type;
         $hotel->hotel_address = $request->hotel_address;
+        $hotel->hotel_city = $request->hotel_city;
+        $hotel->hotel_social = $request->hotel_social;
         $hotel->save();
 
         Session::flash('created', 'New Hotel Created Successfully!');
@@ -84,7 +87,7 @@ class HotelController extends Controller
     {
         $hotel = Hotel::find($id);
         $hotel->hotel_name = $request->hotel_name;
-        $hotel->hotel_class = $request->hotel_class;
+        $hotel->hotel_type = $request->hotel_type;
         $hotel->hotel_address = $request->hotel_address;
         $hotel->update();
 

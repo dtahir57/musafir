@@ -43,6 +43,16 @@
               <p>Manage Hotels</p>
             </a>
           </li>
+
+          <li class="nav-item {{ (Request::is('admin/rooms')?'active':'') }}
+          {{ (Request::is('admin/room/create')?'active':'') }}
+          {{ (Request::is('admin/room/'.request()->route('id').'/edit')?'active':'') }}">
+            <a class="nav-link" href="{{ route('admin.room.index') }}">
+              <i class="material-icons">room</i>
+              <p>Manage Rooms</p>
+            </a>
+          </li>  
+
         </ul>
       </div>
     </div>
