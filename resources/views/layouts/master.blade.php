@@ -53,6 +53,24 @@
             </a>
           </li>  
 
+          <li class="nav-item {{ (Request::is('admin/cities')?'active':'') }}
+          {{ (Request::is('admin/city/create')?'active':'') }}
+          {{ (Request::is('admin/city/'.request()->route('id').'/edit')?'active':'') }}">
+            <a class="nav-link" href="{{ route('admin.city.index') }}">
+              <i class="material-icons">city</i>
+              <p>Manage Cities</p>
+            </a>
+          </li>  
+
+          <li class="nav-item {{ (Request::is('admin/restaurants')?'active':'') }}
+          {{ (Request::is('admin/restaurant/create')?'active':'') }}
+          {{ (Request::is('admin/restaurant/'.request()->route('id').'/edit')?'active':'') }}">
+            <a class="nav-link" href="{{ route('admin.restaurant.index') }}">
+              <i class="material-icons">Restaurant</i>
+              <p>Manage Restaurants</p>
+            </a>
+          </li>  
+
         </ul>
       </div>
     </div>

@@ -26,7 +26,6 @@
                                 <select name="hotel_id" class="form-control">
                                     <option selected disabled>Select Hotel</option>
                             @foreach($hotels as $hotel)
-
                                     <option value="{{ $hotel->id }}">{{ $hotel->hotel_name }}</option>
                             @endforeach
                                 </select>

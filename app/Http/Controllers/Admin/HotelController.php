@@ -89,6 +89,7 @@ class HotelController extends Controller
         $hotel->hotel_name = $request->hotel_name;
         $hotel->hotel_type = $request->hotel_type;
         $hotel->hotel_address = $request->hotel_address;
+        $hotel->hotel_social = $request->hotel_social;
         $hotel->update();
 
         Session::flash('updated', 'Hotel Updated Successfully!');

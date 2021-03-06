@@ -27,10 +27,11 @@
                                 <input type="text" name="hotel_name" class="form-control" placeholder="Hotel Name" required value="{{ $hotel->hotel_name }}" />
                             </div>
                             <div class="col-md-6 form-group">
-                                <select name="hotel_class" class="form-control">
+                                <select name="hotel_type" class="form-control">
                                     <option selected disabled>Select Type</option>
                                     <option value="hotel" @if($hotel->hotel_type === 'hotel') selected @endif>Hotel</option>
-                                    <option value="hotel+dine-Inn" @if($hotel->hotel_type === 'hotel+dine-Inn') selected @endif>Deluxe</option>
+                                    <option value="Hotel+Restaurant" @if($hotel->hotel_type === 'Hotel+Restaurant') selected @endif>Hotel+Restaurant</option>
+                                    
                                 </select>
                             </div>
                             <div class="col-md-6 form-group">

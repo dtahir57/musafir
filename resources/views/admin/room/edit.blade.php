@@ -25,10 +25,11 @@
                         <div class="row">
                            <div class="col-md-6 form-group">
                                 <select name="hotel_id" class="form-control">
-                                    <option selected disabled>Select Hotel</option>
-                                
-                                    <option value="{{$room->hotel->id }}" @if($room->hotel_id === '{{ $room->hotel->id }}') selected @endif> {{ $room->hotel->hotel_name }} </option>
-                                
+                                    <option selected disabled>Select Hotel</option>           
+
+                                @foreach($hotels as $hotel)
+                                    <option value="{{$hotel->id }}" @if($room->hotel_id === '{{ $hotel->id }}') selected @endif> {{ $hotel->hotel_name }} </option>
+                                @endforeach
                                 
                                 </select>
                             </div>

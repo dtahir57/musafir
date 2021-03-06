@@ -30,7 +30,7 @@ class RoomRequest extends FormRequest
             case 'POST':
                 return [
                     
-                    'room_no' => 'required|string|max:255',
+                    'room_no' => 'required|string|max:255|unique:Rooms',
                     'room_floor' => 'required|string',
                     'room_type' => 'required|string',
                     'room_status' => 'required|string',
@@ -47,6 +47,7 @@ class RoomRequest extends FormRequest
                 ];
             case 'DEFAULT':
                 return [];
+        }    
     }
 }
-}
+

@@ -54,6 +54,38 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
      */
 
 
+    /**
+     * Starting Routes For Admin\CityController
+     */
+
+    Route::get('cities', 'Admin\CityController@index')->name('admin.city.index');
+    Route::get('city/create', 'Admin\CityController@create')->name('admin.city.create');
+    Route::post('city', 'Admin\CityController@store')->name('admin.city.store');
+    Route::get('city/{id}/edit', 'Admin\CityController@edit')->name('admin.city.edit');
+    Route::patch('city/{id}', 'Admin\CityController@update')->name('admin.city.update');
+    Route::get('city/destroy/{id}', 'Admin\CityController@destroy')->name('admin.city.destroy');
+
+    /**
+     * Ending Routes For Admin\Admin\CityController
+     */
+
+    /**
+     * Starting Routes For  Admin\RestaurantController
+     */
+
+    Route::get('restaurants', 'Admin\RestaurantController@index')->name('admin.restaurant.index');
+    Route::get('restaurant/create', 'Admin\RestaurantController@create')->name('admin.restaurant.create');
+    Route::post('restaurant', 'Admin\RestaurantController@store')->name('admin.restaurant.store');
+    Route::get('restaurant/{id}/edit', 'Admin\RestaurantController@edit')->name('admin.restaurant.edit');
+    Route::patch('restaurant/{id}', 'Admin\RestaurantController@update')->name('admin.restaurant.update');
+    Route::get('restaurant/destroy/{id}', 'Admin\RestaurantController@destroy')->name('admin.restaurant.destroy');
+
+    /**
+     * Ending Routes For Admin\RestaurantController
+     */
+
+
+
     Route::get('user/logout', function () {
         Auth::logout();
         return redirect()->route('login');

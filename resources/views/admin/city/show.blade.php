@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Manage Rooms')
+@section('title', 'Manage Cities')
 
 @section('content')
 <div class="container-fluid">
@@ -8,8 +8,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4>Manage Rooms</h4>
-                    <a href="{{ route('admin.room.index') }}" role="button" class="btn btn-success float-right">Manage Rooms</a>
+                    <h4>Manage Cities</h4>
+                    <a href="{{ route('admin.city.index') }}" role="button" class="btn btn-success float-right">Manage Cities</a>
                 </div>
             </div>
         </div>

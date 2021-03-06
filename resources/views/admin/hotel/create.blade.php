@@ -29,7 +29,7 @@
                                 <select name="hotel_type" class="form-control">
                                     <option selected disabled>Select Type</option>
                                     <option value="Hotel">Hotel</option>
-                                    <option value="hotel+dine-Inn">Hotel + Dine-Inn</option>
+                                    <option value="hotel+Restaurant">Hotel + Restaurant</option>
                                 </select>
                             </div>
                             <div class="col-md-6 form-group">

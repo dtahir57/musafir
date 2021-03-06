@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Room;
-use App\Http\Requests\HotelRequest;
 use App\Http\Requests\RoomRequest;
+use App\Models\Room;
 use App\Models\Hotel;
 
 use Session;
@@ -21,7 +20,7 @@ class RoomController extends Controller
     public function index()
     {
         $rooms = Room::latest()->paginate(10);
-        return view('admin.room.index', compact('rooms'));
+        return view('admin.room.index' , compact('rooms'));
     }
 
     /**
@@ -32,7 +31,8 @@ class RoomController extends Controller
     public function create()
     {
         $hotels = Hotel::all();
-        return view('admin.room.create',compact('hotels'));    }
+        return view('admin.room.create', compact('hotels'));    
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -42,6 +42,7 @@ class RoomController extends Controller
      */
     public function store(RoomRequest $request)
     {
+
 
         $room = new Room;
         $room->hotel_id = $request->hotel_id;
@@ -77,8 +78,11 @@ class RoomController extends Controller
      */
     public function edit($room_id)
     {
+        $hotels = Hotel::all();
         $room = Room::find($room_id);
-        return view('admin.room.edit', compact('room'));
+        
+        return view('admin.room.edit', compact('room', 'hotels'));
+        
     }
 
     /**
@@ -90,7 +94,10 @@ class RoomController extends Controller
      */
     public function update(RoomRequest $request, $id)
     {
+
+
         $room = Room::find($id);
+        $room->hotel_id = $request->hotel_id;
         $room->room_no = $request->room_no;
         $room->room_floor = $request->room_floor;
         $room->room_capacity = $request->room_capacity;
@@ -98,8 +105,11 @@ class RoomController extends Controller
         $room->room_price = $request->room_price;
         $room->update();
 
-        Session::flash('updated', 'Room Added Successfully!');
+        
+
+        Session::flash('updated', 'Room Updated Successfully!');
         return redirect()->route('admin.room.index');
+
     }
 
     /**

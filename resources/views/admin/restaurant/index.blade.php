@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Manage Room')
+@section('title', 'Manage Restaurants')
 
 @section('content')
 <div class="container-fluid mt-4">
@@ -8,8 +8,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4>Manage Rooms</h4>
-                    <a href="{{ route('admin.room.create') }}" role="button" class="btn btn-success float-right">Add Room</a>
+                    <h4>Manage Restaurants</h4>
+                    <a href="{{ route('admin.restaurant.create') }}" role="button" class="btn btn-success float-right">Add Restaurants</a>
                 </div>
             </div>
         </div>
@@ -30,38 +30,32 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Hotel Name</th>
-                                    <th>Room no</th>
-                                    <th>Floor</th>
-                                    <th>Capacity</th>
+                                    <th>Restaurant Name</th>
+                                    <th>Address</th>
                                     <th>Type</th>
-                                    <th>Status</th>
-                                    <th>Price per Night</th>
+                                    <th>City</th>
                                     <th style="width: 250px;">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($rooms as $room)
+                                @foreach($restaurants as $restaurant)
                                 <tr>
 
                                     <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ $room->hotel->hotel_name }}</td>
-                                    <td>{{ $room->room_no }}</td>
-                                    <td style="text-transform:capitalize;">{{ $room->room_floor }}</td>
-                                    <td>{{ $room->room_capacity  }}</td>
-                                    <td>{{ $room->room_type  }}</td>
-                                    <td>{{ $room->room_status  }}</td>
-                                    
-                                    <td>{{ $room->room_price  }}</td>
+                                    <td>{{ $restaurant->restaurant_name }}</td>
+                                    <td>{{ $restaurant->restaurant_address }}</td>
+                                    <td style="text-transform:capitalize;">{{ $restaurant->restaurant_type }}</td>
+                                    <td>{{ $restaurant->city->city_name  }}</td>
+                                   
                                     <td>
-                                        <a href="{{ route('admin.room.edit', $room->id) }}" role="button" class="btn btn-info btn-sm">Edit</a>
-                                        <a href="{{ route('admin.room.destroy', $room->id) }}" role="button" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="{{ route('admin.restaurant.edit', $restaurant->id) }}" role="button" class="btn btn-info btn-sm">Edit</a>
+                                        <a href="{{ route('admin.restaurant.destroy', $restaurant->id) }}" role="button" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                             <tfoot>
-                                {{ $rooms->links() }}
+                                {{ $restaurants->links() }}
                             </tfoot>
                         </table>
                     </div>
